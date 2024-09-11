@@ -12,7 +12,7 @@ fail() {
 	exit 1
 }
 
-curl_opts=(-vfsSL)
+curl_opts=(-fsSL)
 
 # NOTE: You might want to remove this if copa is not hosted on GitHub releases.
 # if [ -n "${GITHUB_API_TOKEN:-}" ]; then
