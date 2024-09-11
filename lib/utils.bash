@@ -52,7 +52,7 @@ download_release() {
 	else
 	HARDWARE_NAME="$machine"
 	fi
-	url="$GH_REPO/releases/download/v${version}/copa_v${version}_${SYSTEM_NAME}_${HARDWARE_NAME}.tar.gz"
+	url="$GH_REPO/releases/download/v${version}/copa_${version}_${SYSTEM_NAME}_${HARDWARE_NAME}.tar.gz"
 
 	echo "* Downloading $TOOL_NAME release $version..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
