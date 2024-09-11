@@ -55,7 +55,7 @@ download_release() {
 	url="$GH_REPO/releases/download/v${version}/copa_${version}_${SYSTEM_NAME}_${HARDWARE_NAME}.tar.gz"
 
 	echo "* Downloading $TOOL_NAME release $version... from $url to $filename"
-	echo "curl_opts: ${curl_opts[@]}"
+	# echo "curl_opts: ${curl_opts[@]}"
 	curl "${curl_opts[@]}" -o "$filename" "$url" || fail "Could not download $url"
 }
 
