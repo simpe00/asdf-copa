@@ -71,7 +71,7 @@ install_version() {
 
 	(
 		mkdir -p "$install_path"
-		ls $ASDF_DOWNLOAD_PATH
+		ls $ASDF_DOWNLOAD_PATH/copa-0.7.0.tar.gz
 		ls $ASDF_DOWNLOAD_PATH/*
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
