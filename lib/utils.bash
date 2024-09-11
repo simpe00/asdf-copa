@@ -12,7 +12,7 @@ fail() {
 	exit 1
 }
 
-curl_opts=(-fsSL)
+curl_opts=(-fsS)
 
 # NOTE: You might want to remove this if copa is not hosted on GitHub releases.
 if [ -n "${GITHUB_API_TOKEN:-}" ]; then
@@ -56,8 +56,7 @@ download_release() {
 
 	echo "* Downloading $TOOL_NAME release $version... to "$filename""
 	echo "curl_opts: ${curl_opts[@]}"
-	# curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
-	curl "${curl_opts[@]}" -o "~/Downloads/test.tar.gz" -C - "$url" || fail "Could not download $url"
+	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
 }
 
 install_version() {
