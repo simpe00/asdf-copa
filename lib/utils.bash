@@ -14,10 +14,10 @@ fail() {
 
 curl_opts=(-fsSL)
 
-# NOTE: You might want to remove this if copa is not hosted on GitHub releases.
-# if [ -n "${GITHUB_API_TOKEN:-}" ]; then
-# 	curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
-# fi
+NOTE: You might want to remove this if copa is not hosted on GitHub releases.
+if [ -n "${GITHUB_API_TOKEN:-}" ]; then
+	curl_opts=("${curl_opts[@]}" -H "Authorization: token $GITHUB_API_TOKEN")
+fi
 
 sort_versions() {
 	sed 'h; s/[+-]/./g; s/.p\([[:digit:]]\)/.z\1/; s/$/.z/; G; s/\n/ /' |
@@ -55,9 +55,7 @@ download_release() {
 	url="$GH_REPO/releases/download/v${version}/copa_${version}_${SYSTEM_NAME}_${HARDWARE_NAME}.tar.gz"
 
 	echo "* Downloading $TOOL_NAME release $version... from $url to $filename"
-	# echo "curl_opts: ${curl_opts[@]}"
 	curl "${curl_opts[@]}" -o "$filename" "$url" || fail "Could not download $url"
-	ls -al "$filename"
 }
 
 install_version() {
@@ -71,8 +69,6 @@ install_version() {
 
 	(
 		mkdir -p "$install_path"
-		ls $ASDF_DOWNLOAD_PATH/copa-0.7.0.tar.gz
-		ls $ASDF_DOWNLOAD_PATH/*
 		cp -r "$ASDF_DOWNLOAD_PATH"/* "$install_path"
 
 		# TODO: Assert copa executable exists.
