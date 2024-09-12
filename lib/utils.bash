@@ -43,14 +43,14 @@ download_release() {
 
 	# TODO: Adapt the release URL convention for copa
 	# Determine SYSTEM_NAME and HARDWARE_NAME using uname
-	SYSTEM_NAME=$(uname -s | tr '[:upper:]' '[:lower:]')  # Convert to lowercase
+	SYSTEM_NAME=$(uname -s | tr '[:upper:]' '[:lower:]') # Convert to lowercase
 	# Get the machine hardware name and convert x86_64 to amd64
 	# Adoopt this for macOS and other systems as needed
 	machine=$(uname -m)
 	if [ "$machine" = "x86_64" ]; then
-	HARDWARE_NAME="amd64"
+		HARDWARE_NAME="amd64"
 	else
-	HARDWARE_NAME="$machine"
+		HARDWARE_NAME="$machine"
 	fi
 	url="$GH_REPO/releases/download/v${version}/copa_${version}_${SYSTEM_NAME}_${HARDWARE_NAME}.tar.gz"
 
