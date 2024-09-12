@@ -10,3 +10,4 @@ asdf plugin test copa https://github.com/simpe00/asdf-copa.git "copa --version"
 ```
 
 Tests are automatically run in GitHub Actions on push and PR.
+
