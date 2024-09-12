@@ -17,7 +17,7 @@
 
 # Dependencies
 
-- [copacetic - prequisitives](#https://project-copacetic.github.io/copacetic/website/installation#prequisitives)
+- [copacetic - prequisitives](https://project-copacetic.github.io/copacetic/website/installation#prequisitives)
 
 # Install
 
